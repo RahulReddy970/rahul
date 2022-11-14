@@ -1,0 +1,28 @@
+<template>
+<lightning-button variant="brand"
+                    label={showContacts}
+                    onclick={handleClick}>
+</lightning-button>
+
+<!-- hide/show datatable-->
+<template if:true={isVisible}>
+    <lightning-card title="LWC Datatable">
+
+        <!--Input box for search functionality input-->
+        <lightning-input type="search"
+                                onchange={handleChanged}
+                                label="Search"
+                                value={searchKey}>
+                                </lightning-input>
+
+    <!--datatable section starts here-->
+    <lightning-datatable
+    data={data}
+    columns={columns}
+    key-field="Id"
+    onrowselection={getSelectedRows}>
+    </lightning-datatable>
+    </lightning-card>
+</template>   
+
+</template>

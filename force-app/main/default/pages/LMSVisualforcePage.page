@@ -1,0 +1,52 @@
+<apex:page>
+<div>
+    <h1>Visual Force Component-LMS</h1><p></p>
+    <b>Enter the Message</b><input type="text" id="theMessage"/><p></p>
+    <button onclick="publishMC()">Send Message</button><p></p>
+    <button onclick="subscribeMC()">Subscribe</button><p></p>
+    <button onclick="unsubscribeMC()">UnSubscribe</button><p></p>
+    <p></p>
+    <b>*****Message Received*****</b>
+    <p></p>
+    <label id="MCMessageText"/> 
+</div>
+
+<script>
+    //Load the Message Channel
+    var SAMPLEMC = '{!$MessageChannel.MyMsgChannel__c}';
+
+    //Declare the variable to store data
+    var subscriptionToMC;
+
+    //Button Functions
+    function publishMC()
+    {
+        const message = {
+                         messageToSend : document.getElementById('theMessage').value,
+                         sourceSystem : 'From VisualForce',
+                         senderName : 'Rahul'
+                        };
+                        sforce.one.publish(SAMPLEMC,message);
+    }
+    function subscribeMC()
+    {
+        if(!subscriptionToMC)
+        {
+            subscriptionToMC = sforce.one.subscribe(SAMPLEMC,displayMessage);  
+        }
+    }
+    function displayMessage(message)
+    {
+        var textlabel = document.querySelector('#MCMessageText');
+        textlabel.innerHTML = message ? JSON.stringify(message,null,'\t'):'no message payload';
+    }
+    function unsubscribeMC()
+    {
+        if(subscriptionToMC)
+        {
+            sforce.one.unsubscribe(subscriptionToMC);
+            subscriptionToMC = null;
+        }
+    }
+</script>
+</apex:page>

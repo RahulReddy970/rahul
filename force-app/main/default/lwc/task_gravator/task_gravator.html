@@ -1,0 +1,14 @@
+<template>
+    <div class="slds-text-heading_large slds-text-align_center">Gravatar - Reusable Lightning Web Component</div>
+
+    <div class="slds-grid">
+        <div class="slds-col slds-size_2-of-8">
+            <c-gravatar size={size} email={email} is-round-corner={isround}></c-gravatar>
+        </div>
+        <div class="slds-col slds-size_6-of-8">
+            <lightning-input type="number" name="input2" label="Image size in pixel" value={size} onchange={updateSize}></lightning-input>
+            <lightning-input type="email" label="Email address" value={email} onblur={updateEmail}></lightning-input> 
+            <lightning-input type="checkbox" label="Rounded corner"  value={isround} onchange={updateBorder}></lightning-input> 
+        </div>
+    </div>
+</template>

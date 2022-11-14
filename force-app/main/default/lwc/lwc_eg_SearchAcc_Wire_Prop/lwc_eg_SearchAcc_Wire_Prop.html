@@ -1,0 +1,19 @@
+<template>
+   <lightning-card title="Search Account- wire a property">
+    <lightning-input label="Enter the name of the account" type="search" onchange={searchme}>
+        <p></p>
+        <template if:true={Rahul.data}>
+            <template for:each={Rahul.data} for:item="ad">
+                <p key={ad.id}>
+                    Account Name-->{ad.Name}
+                    Account Rating-->{ad.Rating}
+                    Account Industry-->{ad.Industry}
+                </p>
+            </template>
+        </template>
+        <template if:true={Rahul.error}>
+            error:{Rahul.Error}
+        </template>
+    </lightning-input>
+   </lightning-card> 
+</template>

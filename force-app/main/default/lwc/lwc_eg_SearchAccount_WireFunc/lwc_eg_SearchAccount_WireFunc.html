@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="Search Accounts-Wire a function">
+        <lightning-input label="Enter the name" type="search" onchange={searchme}></lightning-input>
+        <p></p>
+        <template if:true = {reccc}>
+            <template for:each = {reccc} for:item="ad">
+                <p key ={ad.id}>
+                    Account Name = {ad.Name} 
+                    Account Rating = {ad.Rating} 
+                    Account Industry = {ad.Industry} 
+                    Account Phone = {ad.Phone}
+                </p>
+            </template>
+        </template>
+        <template if:true = {errr}>
+            error:{errr}
+        </template>
+    </lightning-card>
+</template>

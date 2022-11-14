@@ -1,0 +1,32 @@
+<template>
+    <lightning-card title="LWC - Navigation Service for Account Pages">
+        <lightning-card title="Account Record Pages">
+            <lightning-button label="New Account" onclick={navigateToNewAccount}></lightning-button>
+            <lightning-button label="View Account" onclick={navigateToViewAccount}></lightning-button>
+            <lightning-button label="Edit Account" onclick={navigateToEditAccount}></lightning-button>
+        </lightning-card>
+
+        <lightning-card title="Navigate To Views">
+            <lightning-button label="Account List View" onclick={navigateToRelatedList}></lightning-button>
+            <lightning-button label="Account Related List View" onclick={navigateToList}></lightning-button>
+        </lightning-card>
+
+        <lightning-card title="Navigate To Home">
+            <lightning-button label="Navigate to home" onclick={navigateToHome}></lightning-button>
+            <lightning-button label="Navigate to Contact Home" class="slds-m-around_medium" onclick={navigateToContactHome}></lightning-button>
+        </lightning-card>
+
+        <lightning-card title="Navigate to Others">
+            <lightning-button label="Navigate to Chatter Home" onclick={navigateToChatterHome}></lightning-button>
+            <lightning-button label="Navigate to Reports" onclick={navigateToReports}></lightning-button>
+            <lightning-button label="Navigate to Tab" onclick={navigateToTab}></lightning-button>
+            <lightning-button label="Navigate to external web page" onclick={navigateToExternalPage}></lightning-button>
+            <lightning-button label="Navigate to files" onclick={navigateToFiles} class="slds-m-around_medium"></lightning-button>
+        </lightning-card>
+
+        <lightning-card title="Navigate to Other Component">
+            <lightning-button label="Navigate to VF" onclick={navigateToVFComponent}></lightning-button>
+            <lightning-button label="Navigate to Aura" class="slds-m-around_medium" onclick={navigateToAura} ></lightning-button>
+        </lightning-card>
+    </lightning-card>
+</template>

@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="Search Contact-Wire a Property">
+        <lightning-input label="Enter the name" type="search" onchange={searchme}></lightning-input>
+        <p></p>
+        <template if:true = {Rahul.data}>
+            <template for:each = {Rahul.data} for:item = "cd">
+                <p key = {cd.id}>
+                    Contact FirstName-->{cd.FirstName} 
+                    Contact LastName-->{cd.LastName} 
+                    Contact Email-->{cd.Email} 
+                </p>
+            </template>
+        </template>
+        <template if:true = {Rahul.error}>
+            error:{Rahul.Error}
+        </template>
+    </lightning-card>
+</template>

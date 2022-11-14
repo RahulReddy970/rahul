@@ -1,0 +1,6 @@
+<template>
+    <lightning-flow if:true={singleContact}
+                    flow-api-name="Launch_Contact_Flow_From_LWC"
+                    flow-input-variables={inputvariables}
+                    onstatuschange={handleStatusChange}></lightning-flow>
+</template>

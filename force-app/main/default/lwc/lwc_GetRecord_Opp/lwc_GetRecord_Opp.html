@@ -1,0 +1,10 @@
+<template>
+    <lightning-card title="Opportunities Record using GET">
+        <template if:true={Opp.data}>
+            <p>Opportunity Name:{name}</p>
+            <p>Opportunity Amount:{amount}</p>
+            <p>Opportunity Stage:{stagename}</p>
+            <p>Opportunity Probability:{probability}</p>
+        </template>
+    </lightning-card>
+</template>
